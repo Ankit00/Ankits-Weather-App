@@ -59,3 +59,7 @@ button{
     border: 1px solid #888888;
     color: white;
 }
+
+.help-content{
+    font-size: 24px;
+}
