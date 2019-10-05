@@ -11,7 +11,7 @@ forecastForm.addEventListener('submit', (e) => {
     e.preventDefault();
     const place = address.value;
     messageOne.textContent = "Loading..."
-        fetch('http://localhost:3000/weather?address='+place).then((response) => {
+        fetch('/weather?address='+place).then((response) => {
         response.json().then((data) => {
             if(data.Error){
                 messageOne.textContent = data.Error;

@@ -4,7 +4,7 @@ const path = require('path');
 const utils = require('./Utils/utils');
 const app = express();
 
-
+const port = process.env.PORT;
 const publicDirectory = path.join(__dirname,"../public");
 const viewsDirectory = path.join(__dirname,'../views/templates');
 const partialsDirectory = path.join(__dirname,"../views/partials");
@@ -73,6 +73,6 @@ app.get('*',(req,res) => {
     })
 });
 
-app.listen('3000',() => {
-    console.log('Server started and listening @port 3000');
+app.listen(port,() => {
+    console.log('Server started and listening @port'+port);
 })
