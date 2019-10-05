@@ -1,4 +1,3 @@
-console.log('Client Side JavaScript Code');
 const forecastForm = document.querySelector('form');
 const address = document.querySelector('input');
 const messageOne = document.querySelector('#message1');
