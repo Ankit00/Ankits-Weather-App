@@ -18,7 +18,8 @@ forecastForm.addEventListener('submit', (e) => {
             }
             else{
                 messageOne.textContent = data.place;
-                messageTwo.textContent = data.summary + " Temperature is " + data.temperature;
+                messageTwo.textContent = data.summary + "\r\nCurrent temperature is " + data.temperature + " degrees.\r\nProbability of rain is "+data.rainProbability+"%.\r\nTemperature High : "+data.highTemp+"\r\nTemperature Low : "+data.lowTemp;
+                messageTwo.setAttribute('style','white-space: pre;');
             }
         })
     });

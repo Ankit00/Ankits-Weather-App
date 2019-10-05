@@ -4,7 +4,7 @@ const path = require('path');
 const utils = require('./Utils/utils');
 const app = express();
 
-const port = process.env.PORT;
+const port = process.env.PORT || 3000;
 const publicDirectory = path.join(__dirname,"../public");
 const viewsDirectory = path.join(__dirname,'../views/templates');
 const partialsDirectory = path.join(__dirname,"../views/partials");
@@ -49,7 +49,7 @@ app.get('/weather', (req,res) => {
                     Error : err
                 });
             }
-            utils.weatherInfo(latitude,longitude,(error,{summary,temperature,rainProbability})=>{
+            utils.weatherInfo(latitude,longitude,(error,{summary,temperature,rainProbability,highTemp,lowTemp})=>{
                 if(error){
                     return res.send({
                         Error : error
@@ -59,7 +59,9 @@ app.get('/weather', (req,res) => {
                     place,
                     summary,
                     temperature,
-                    rainProbability
+                    rainProbability,
+                    highTemp,
+                    lowTemp
                 })
             })
         })

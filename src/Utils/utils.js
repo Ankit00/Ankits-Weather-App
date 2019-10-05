@@ -39,7 +39,9 @@ const weatherInfo = (latitude,longitude,callback) => {
             callback(undefined,{
                 summary : body.daily.data[0].summary,
                 temperature : body.currently.temperature,
-                rainProbability : body.currently.precipProbability
+                rainProbability : body.currently.precipProbability,
+                highTemp : body.daily.data[0].temperatureHigh,
+                lowTemp : body.daily.data[0].temperatureLow
             })
         }
     })
